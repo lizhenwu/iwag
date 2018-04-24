@@ -3,5 +3,8 @@
         "env",
         "react"
     ],
-    "compact": false
+    "compact": false,
+    "plugins": [
+        "react-hot-loader/babel"
+    ]
 }

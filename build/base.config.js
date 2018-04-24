@@ -10,9 +10,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../dist'),   // 必须是绝对路径
-        filename: '[chunkhash].bundle.js'
+        filename: '[name].[hash].js'
     },
-    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -20,17 +19,27 @@ module.exports = {
                 use: 'babel-loader',
                 exclude: /node_modules/
             }
+            ,{
+                test: /\.less$/,
+                use: [{
+                        loader: 'style-loader'
+                    }, {
+                        loader: 'css-loader', options: {
+                            sourceMap: true
+                        }
+                    }, {
+                    loader: 'less-loader', options: {
+                            sourceMap: true
+                        }
+                    }],
+                exclude: /node_modules/
+            }
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.less']
     },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"development"'
-            }
-        }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor'
         }),
