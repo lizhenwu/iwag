@@ -1,6 +1,6 @@
 {
   "name": "iwag",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "windmill",
   "description": "react UI components for my own use",
   "main": "./lib/button.js",
