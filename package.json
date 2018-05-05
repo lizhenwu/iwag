@@ -6,7 +6,7 @@
   "main": "./lib/button.js",
   "license": "MIT",
   "files": [
-    "./lib/*.*"
+    "lib"
   ],
   "homepage": "https://github.com/lizhenwu/iwag",
   "repository": {
