@@ -1,10 +1,14 @@
 {
     "presets": [
-        "env",
-        "react"
+        "@babel/preset-env",
+        "@babel/preset-react",
+        ["@babel/preset-stage-1", {
+            "decoratorsLegacy": true
+        }]
     ],
     "compact": false,
     "plugins": [
-        "react-hot-loader/babel"
+        "react-hot-loader/babel",
+        "transform-class-properties"
     ]
 }
