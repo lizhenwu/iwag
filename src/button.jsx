@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 const regFor2Ch = /^[\u4e00-\u9fa5]{2}$/;
 
@@ -9,6 +10,10 @@ export default class Button extends React.Component{
         loading: false,
         style: null,
         size: null
+    }
+    static propTypes = {
+        type: PropTypes.oneOf(['antd', 'awesome']),
+        size: PropTypes.oneOf(['large', 'small'])
     }
     constructor(props) {
         super(props);
@@ -22,6 +27,10 @@ export default class Button extends React.Component{
             onClick(e);
         }
     }
+    // componentDidMount() {
+    //     let {children} = this.props;
+    //     console.log(React.Children.only(children));
+    // }
     render() {
         let {className, type, style, size, children, loading, ...others} = this.props;
         if(loading) {
@@ -53,6 +62,7 @@ export default class Button extends React.Component{
             }
             return <span>{child}</span>
         }) : null;
+        
         return <button {...others} style={style} className={classes} onClick={this.handleClick}>{childrenCompos}</button>
     }
 }

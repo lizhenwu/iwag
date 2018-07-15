@@ -17,7 +17,7 @@
     "dev": "webpack-dev-server --config ./build/dev.config.js",
     "build": "babel ./src/button.jsx --out-dir lib --source-maps",
     "css": "gulp less",
-    "prepare": "yarn run build&&yarn run css"
+    "_prepare": "yarn run build&&yarn run css"
   },
   "browserslist": [
     "last 2 version"
@@ -37,6 +37,8 @@
     "babel-loader": "^8.0.0-beta.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.24.4",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "gulp": "^3.9.1",
